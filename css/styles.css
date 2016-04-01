@@ -152,6 +152,9 @@ h1 {
 		line-height: 170px;
 		font-size: 64px;
 	}
+	.card:not(.dealers):not(.players)::before {
+		display: none; /* not enough space for copyright :) */
+	}
 }
 
 @media (max-width: 762px), (max-height: 508px) {
