@@ -1,15 +1,15 @@
+/**
+ * Initializes the App.
+ */
 (function() {
-
-	var init = function() {
-
-		view.initDeck();
-
-		var deck = new Deck();
-
-		view.setInitialConfiguration(deck.draw(5));
-
-	}
-
-	init();
-
+	
+	var deck = new Deck();
+	
+	view.initDeck();
+	view.setInitialConfiguration(deck.draw(5));
+	
+	document.querySelector('#hit').addEventListener('click', function() {
+		view.drawCards(deck.draw(2));
+	});
+	
 })();

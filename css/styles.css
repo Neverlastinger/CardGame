@@ -9,6 +9,36 @@ html, body {
 	height: 750px;
 }
 
+h1 {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+	margin: 0;
+	padding: 0 0 0 30px;
+	width: 100%;
+    background: black;
+    color: white;
+    font-size: 12px;
+}
+
+#hit {
+	position: absolute;
+	left: 0px;
+	top: 55%;
+	padding: 4px 40px;
+	box-shadow: -1px -1px 2px black;
+	font-size: 32px;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+#hit:hover {
+	box-shadow: -2px -2px 3px black;
+}
+
+#board.disabled #hit {
+	pointer-events: none;
+}
+
 .card {
 	position: absolute;
 	width: 180px;
@@ -17,8 +47,49 @@ html, body {
 	background: black;
 	border: 20px solid white;
 	border-radius: 20px;
-	color: white;
-	transition: all 0.4s;
+	color: black;
+	text-align: center;
+	transform: rotateY(180deg);
+	transition: all 0.4s, background 0s ease 0.1s;
+}
+
+.card > span {
+	position: absolute;
+	font-size: 32px;
+	transition: font-size 0.4s, line-height 0.4s;
+}
+.card .topLeft {
+	top: 0px; 
+	left: 0px;
+}
+.card .topRight {
+	top: 0px; 
+	right: 0px;
+}
+.card .bottomLeft {
+	bottom: 0px; 
+	left: 0px;
+	transform: rotate(180deg);
+}
+.card .bottomRight {
+	bottom: 0px; 
+	right: 0px;
+	transform: rotate(180deg);
+}
+.card .suit {
+	position: static;
+	line-height: 290px;
+	font-size: 128px;
+}
+
+.card.red {
+	color: red;
+}
+
+.card.dealers,
+.card.players {
+	transform: rotateY(0deg);
+	background: white;
 }
 
 .card.dealers {
@@ -36,12 +107,20 @@ html, body {
 
 .card.players {
 	top: 50%;
+	cursor: pointer;
 }
 .card.players.players1 {
 	left: 40%;
 }
 .card.players.players2 {
 	left: 64%;
+}
+.card.players:hover {
+	box-shadow: -2px -2px 3px black;
+}
+
+.card.destroyed {
+	transform: rotateY(90deg) rotate(90deg) scale(0.5);
 }
 
 @media (max-width: 1066px), (max-height: 750px) {
@@ -54,6 +133,13 @@ html, body {
 		height: 180px;
 		border-width: 10px;
 		border-radius: 10px;
+	}
+	.card > span {
+		font-size: 26px;
+	}
+	.card .suit {
+		line-height: 170px;
+		font-size: 64px;
 	}
 }
 
@@ -68,6 +154,13 @@ html, body {
 		border-width: 5px;
 		border-radius: 5px;
 	}
+	.card > span {
+		font-size: 18px;
+	}
+	.card .suit {
+		line-height: 85px;
+		font-size: 32px;
+	}
 }
 
 @media (max-width: 400px), (max-height: 293px) {
@@ -80,5 +173,16 @@ html, body {
 		height: 35px;
 		border-width: 3px;
 		border-radius: 3px;
+	}
+	.card > span {
+		font-size: 8px;
+	}
+	.card .suit {
+		line-height: 32px;
+		font-size: 16px;
+	}
+	#hit {
+		padding: 3px 10px;
+		font-size: 24px;
 	}
 }

@@ -1,12 +1,18 @@
+/**
+ * Represents a deck of 52 playing cards.
+ */
 var Deck = function() {
-
-	var cards = [];
 
 	var init = function() {
 		shuffle(this.cards);
-		console.log(this.cards);
 	}.bind(this);
 
+	/**
+	 * Draws cards from the deck.
+	 * 
+	 * @param count: the number of cards to be drawn
+	 * @returns array of card objects, containing number and suit
+	 */
 	this.draw = function(count) {
 		return this.cards.splice(0, count);
 	}
@@ -36,6 +42,9 @@ var Deck = function() {
 
 }
 
+/**
+ * Cards in the deck. 
+ */
 Deck.prototype.cards = (function() {
 
 	var cardNumbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
