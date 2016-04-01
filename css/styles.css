@@ -1,11 +1,12 @@
 html, body {
 	padding: 10px;
+	overflow: hidden;
 }
 
-#deck {
+#board {
 	position: relative;
-	width: 240px;
-	height: 360px;
+	width: 1066px;
+	height: 750px;
 }
 
 .card {
@@ -24,100 +25,60 @@ html, body {
 	top: 0px;
 }
 .card.dealers.dealers1 {
-	left: 300px;
+	left: 30%;
 }
 .card.dealers.dealers2 {
-	left: 550px;
+	left: 54%;
 }
 .card.dealers.dealers3 {
-	left: 800px;
+	left: 78%;
 }
 
 .card.players {
-	top: 400px;
+	top: 50%;
 }
 .card.players.players1 {
-	left: 400px;
+	left: 40%;
 }
 .card.players.players2 {
-	left: 650px;
+	left: 64%;
 }
 
 @media (max-width: 1066px), (max-height: 750px) {
+	#board {
+		width: 762px;
+		height: 508px;
+	}
 	.card {
 		width: 120px;
 		height: 180px;
-	}
-	.card.dealers.dealers1 {
-		left: 220px;
-	}
-	.card.dealers.dealers2 {
-		left: 390px;
-	}
-	.card.dealers.dealers3 {
-		left: 560px;
-	}
-	.card.players {
-		top: 240px;
-	}
-	.card.players.players1 {
-		left: 300px;
-	}
-	.card.players.players2 {
-		left: 470px;
+		border-width: 10px;
+		border-radius: 10px;
 	}
 }
 
 @media (max-width: 762px), (max-height: 508px) {
+	#board {
+		width: 400px;
+		height: 293px;
+	}
 	.card {
 		width: 60px;
 		height: 90px;
-		border-width: 10px;
-		border-radius: 10px;
-	}
-	.card.dealers.dealers1 {
-		left: 120px;
-	}
-	.card.dealers.dealers2 {
-		left: 210px;
-	}
-	.card.dealers.dealers3 {
-		left: 300px;
-	}
-	.card.players {
-		top: 130px;
-	}
-	.card.players.players1 {
-		left: 170px;
-	}
-	.card.players.players2 {
-		left: 260px;
+		border-width: 5px;
+		border-radius: 5px;
 	}
 }
 
 @media (max-width: 400px), (max-height: 293px) {
+	#board {
+		width: 200px;
+		height: 150px;
+	}
 	.card {
 		width: 20px;
 		height: 35px;
 		border-width: 3px;
 		border-radius: 3px;
-	}
-	.card.dealers.dealers1 {
-		left: 60px;
-	}
-	.card.dealers.dealers2 {
-		left: 90px;
-	}
-	.card.dealers.dealers3 {
-		left: 120px;
-	}
-	.card.players {
-		top: 50px;
-	}
-	.card.players.players1 {
-		left: 80px;
-	}
-	.card.players.players2 {
-		left: 110px;
 	}
 }

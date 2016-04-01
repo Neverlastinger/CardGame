@@ -3,10 +3,16 @@ var view = new function() {
 	var animationDuration = 400;
 
 	var elements = {
-		deck: document.querySelector('#deck')
+		board: document.querySelector('#board')
 	};
 
 	var deckSize = 52;
+	
+	var init = function() {
+		
+		
+		
+	}
 
 	this.initDeck = function() {
 
@@ -18,7 +24,7 @@ var view = new function() {
 			card.style.top = pos;
 			card.style.left = pos;
 
-			elements.deck.appendChild(card);
+			elements.board.appendChild(card);
 		}
 
 	}
@@ -40,7 +46,7 @@ var view = new function() {
 
 				return function() {
 
-					var element = elements.deck.children[deckSize - 1];
+					var element = elements.board.children[deckSize - 1];
 					resetCard(element);
 					element.classList.add(className);
 					element.classList.add(className + (index + 1));
@@ -63,5 +69,7 @@ var view = new function() {
 		element.style.top = '';
 		element.style.left = '';
 	};
+	
+	init();
 
 }
